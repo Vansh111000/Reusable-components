@@ -2,6 +2,17 @@ import { SendEmail } from "@/src/lib/email";
 import { NextRequest, NextResponse } from "next/server";
 
 
+/* 
+http://localhost:3000/api/practice-mail
+Put json output like this 
+{
+  "to":"abc@gmail.com",
+  "subject":"heyy",
+  "template":"welcome", There are many templates in lib/email/templates.ts and you can add required 
+  "data":"This is vansh"
+}
+*/
+
 export async function POST(req: NextRequest) {
   const { to, subject, template, data } = await req.json();
 
